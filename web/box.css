@@ -1,0 +1,103 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #042331;
+    transition: all 0.5s ease;
+//ease 开始和结束慢，中间快
+}
+
+.sidebar header {
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    font-size: 22px;
+    background: #063146;
+    user-select: none;
+//用户不能选取
+}
+
+.sidebar ul a {
+    display: block;
+    padding-left: 50px;
+    line-height: 70px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    color: white;
+    transition: 0.3s linear;
+}
+
+.sidebar ul i {
+    padding-right: 16px;
+}
+
+.sidebar ul a:hover {
+    padding-left: 40px;
+}
+
+#check {
+    display: none;
+    position: fixed;
+    right: 50px;
+}
+
+label #btn,
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background-color: #042331;
+    border-radius: 3px;
+}
+
+label #btn {
+    right: 40px;
+    top: 20px;
+    color: white;
+    font-size: 35px;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+label #cancel {
+    z-index: 999;
+    right: -197px;
+    top: 80px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: 0.3s;
+}
+
+#check:checked~.sidebar {
+    right: 0;
+}
+
+#check:checked~label #btn {
+    right: 250px;
+    opacity: 0;
+}
+
+#check:checked~label #cancel {
+    right: 197px;
+}
+
+section {
+//定位背景图片在中间
+height: 100vh;
+    background-size: cover;
+    transition: all 0.5s;
+}
+
+#check:checked~section {
+    margin-left: 250px;
+}
